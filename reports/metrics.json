@@ -1,0 +1,106 @@
+{
+  "model_version": "gbm-20261025-201303",
+  "split": {
+    "train": {
+      "rows": 158897,
+      "fraud": 393
+    },
+    "valid": {
+      "rows": 60117,
+      "fraud": 132
+    },
+    "test": {
+      "rows": 60878,
+      "fraud": 113
+    }
+  },
+  "ranking_metrics_test": {
+    "logistic_regression": {
+      "pr_auc": 0.5427275355889604,
+      "roc_auc": 0.9945657469039657,
+      "recall_at_top_0.1pct": 0.40707964601769914,
+      "recall_at_top_0.5pct": 0.6460176991150443,
+      "recall_at_top_1.0pct": 0.7964601769911505
+    },
+    "gradient_boosting": {
+      "pr_auc": 0.8335426596691816,
+      "roc_auc": 0.9973424384816305,
+      "recall_at_top_0.1pct": 0.5221238938053098,
+      "recall_at_top_0.5pct": 0.8849557522123894,
+      "recall_at_top_1.0pct": 0.9469026548672567
+    }
+  },
+  "thresholds": {
+    "step_up": 0.00175289400545297,
+    "block": 0.06759866525418323
+  },
+  "business_impact_test": {
+    "no_fraud_checks": {
+      "total_cost": 1900014.2399999998,
+      "missed_fraud_loss": 1900014.2399999998,
+      "fraud_loss_after_step_up": 0.0,
+      "step_up_friction": 0.0,
+      "wrong_block_cost": 0.0,
+      "review_cost": 0.0,
+      "fraud_amount_total": 1900014.2399999998,
+      "fraud_amount_prevented": 0.0,
+      "fraud_amount_prevented_pct": 0.0,
+      "fraud_txn_recall_pct": 0.0,
+      "step_up_rate_pct": 0.0,
+      "block_rate_pct": 0.0,
+      "legit_customers_challenged": 0
+    },
+    "rules_only": {
+      "total_cost": 904306.79,
+      "missed_fraud_loss": 797799.0900000001,
+      "fraud_loss_after_step_up": 103212.7,
+      "step_up_friction": 1635.0,
+      "wrong_block_cost": 500.0,
+      "review_cost": 1160.0,
+      "fraud_amount_total": 1900014.2399999998,
+      "fraud_amount_prevented": 999002.4499999997,
+      "fraud_amount_prevented_pct": 52.57868225240248,
+      "fraud_txn_recall_pct": 34.51327433628319,
+      "step_up_rate_pct": 0.19875817208186863,
+      "block_rate_pct": 0.04763625611879497,
+      "legit_customers_challenged": 111
+    },
+    "ml_cost_optimised": {
+      "total_cost": 108436.246,
+      "missed_fraud_loss": 44878.53,
+      "fraud_loss_after_step_up": 38597.716,
+      "step_up_friction": 3630.0,
+      "wrong_block_cost": 15250.0,
+      "review_cost": 6080.0,
+      "fraud_amount_total": 1900014.2399999998,
+      "fraud_amount_prevented": 1816537.9939999997,
+      "fraud_amount_prevented_pct": 95.60654629620039,
+      "fraud_txn_recall_pct": 90.26548672566372,
+      "step_up_rate_pct": 0.41558526889845265,
+      "block_rate_pct": 0.24967968724333914,
+      "legit_customers_challenged": 303
+    }
+  },
+  "detection_by_fraud_pattern": {
+    "account_takeover": {
+      "fraud_txns": 54,
+      "caught_pct": 98.1
+    },
+    "scam": {
+      "fraud_txns": 59,
+      "caught_pct": 83.1
+    }
+  },
+  "drift_alerts": [
+    {
+      "feature": "user_history_count",
+      "psi": 0.16609221529672666,
+      "status": "watch"
+    },
+    {
+      "feature": "amount_vs_user_max",
+      "psi": 0.1158632623063465,
+      "status": "watch"
+    }
+  ]
+}

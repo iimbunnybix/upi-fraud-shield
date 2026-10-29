@@ -1,0 +1,9 @@
+numpy>=2.0
+pandas>=2.2
+scikit-learn>=1.5
+joblib>=1.4
+matplotlib>=3.8
+fastapi>=0.110
+uvicorn>=0.29
+pydantic>=2.6
+httpx>=0.27        # for FastAPI's TestClient in tests
